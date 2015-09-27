@@ -18,5 +18,9 @@
         <module>ms-batch</module>
     </modules>
 
+    <properties>
+        <gwt.version>2.5.1</gwt.version>
+        <gxt.version>2.3.0-gwt22</gxt.version>
+    </properties>
 
 </project>

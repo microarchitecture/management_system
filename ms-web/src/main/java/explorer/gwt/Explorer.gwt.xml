@@ -3,7 +3,14 @@
 <module>
 
     <inherits name='com.google.gwt.user.User'/>
+    <inherits name="com.extjs.gxt.ui.GXT"/>
 
-    <entry-point class='client.Explorer'/>
+    <source path="controller"/>
+    <source path="client"/>
+    <source path="model"/>
+    <source path="util"/>
+    <source path="view"/>
+
+    <entry-point class='explorer.gwt.client.Explorer'/>
 
 </module>
