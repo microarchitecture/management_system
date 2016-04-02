@@ -1,0 +1,50 @@
+[
+  {
+    "id" : 1,
+    "nodeName" : "Limits",
+    "nodeType" : "ROOT",
+    "parentNodeId" : 0
+  },
+  {
+    "id" : 2,
+    "nodeName" : "Limits upload",
+    "nodeType" : "LEAF",
+    "parentNodeId" : 1
+  },
+  {
+    "id" : 3,
+    "nodeName" : "Limits data",
+    "nodeType" : "LEAF",
+    "parentNodeId" : 1
+  },
+  {
+    "id" : 4,
+    "nodeName" : "Exposures",
+    "nodeType" : "ROOT",
+    "parentNodeId" : 0
+  },
+  {
+    "id" : 5,
+    "nodeName" : "Exposures upload",
+    "nodeType" : "LEAF",
+    "parentNodeId" : 4
+  },
+  {
+    "id" : 6,
+    "nodeName" : "Exposures data",
+    "nodeType" : "LEAF",
+    "parentNodeId" : 4
+  },
+  {
+    "id" : 7,
+    "nodeName" : "Breaches",
+    "nodeType" : "ROOT",
+    "parentNodeId" : 0
+  },
+  {
+    "id" : 8,
+    "nodeName" : "Breaches data",
+    "nodeType" : "LEAF",
+    "parentNodeId" : 7
+  }
+]

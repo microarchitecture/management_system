@@ -1,7 +1,9 @@
 package explorer.gwt.view;
 
+import com.extjs.gxt.ui.client.Registry;
 import com.extjs.gxt.ui.client.mvc.AppEvent;
 import com.extjs.gxt.ui.client.mvc.Controller;
+import com.extjs.gxt.ui.client.mvc.Dispatcher;
 import com.extjs.gxt.ui.client.mvc.View;
 import com.extjs.gxt.ui.client.widget.ContentPanel;
 import com.extjs.gxt.ui.client.widget.Viewport;
@@ -12,11 +14,13 @@ import com.google.gwt.user.client.ui.RootPanel;
 import static com.extjs.gxt.ui.client.Style.LayoutRegion.CENTER;
 import static com.extjs.gxt.ui.client.Style.LayoutRegion.WEST;
 
+import static explorer.gwt.util.AppEvents.LEFT_MENU;
+
 public class PageLayoutView extends View {
 
     private static final String WEST_PANEL_TITLE = "westPanel";
     private static final String EAST_PANEL_TITLE = "eastPanel";
-    private static final String MENU_TAG = "MENU";
+    private static final String MENU_TAG = "Menu";
 
     private Controller controller;
 
@@ -32,7 +36,7 @@ public class PageLayoutView extends View {
 
     @Override
     protected void handleEvent(AppEvent appEvent) {
-        System.out.println("INIT event received by PageLayoutView");
+        //switch initialize() on onInit()
     }
 
     @Override
@@ -44,6 +48,9 @@ public class PageLayoutView extends View {
         createWestContainer();
         createEastContainer();
         finishContainerCreation();
+
+        Dispatcher dispatcher = Dispatcher.get();
+        dispatcher.dispatch(LEFT_MENU, null);
     }
 
     private void createMainLayout() {
@@ -61,6 +68,7 @@ public class PageLayoutView extends View {
 
         BorderLayoutData layoutData = new BorderLayoutData(WEST, 200);
         viewport.add(westPanel, layoutData);
+        Registry.register(WEST_PANEL_TITLE, westPanel);
     }
 
     private void createEastContainer() {
@@ -70,6 +78,7 @@ public class PageLayoutView extends View {
 
         BorderLayoutData layoutData = new BorderLayoutData(CENTER);
         viewport.add(eastPanel, layoutData);
+        Registry.register(EAST_PANEL_TITLE, eastPanel);
     }
 
     private void finishContainerCreation() {

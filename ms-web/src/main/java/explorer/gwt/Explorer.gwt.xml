@@ -10,7 +10,10 @@
     <source path="model"/>
     <source path="util"/>
     <source path="view"/>
+    <source path="component"/>
+    <source path="explorer.gwt"/>
 
     <entry-point class='explorer.gwt.client.Explorer'/>
+    <set-property name="locale" value="default"/>
 
 </module>

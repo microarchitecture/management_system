@@ -15,6 +15,6 @@ public class ContentView extends View {
 
     @Override
     protected void handleEvent(AppEvent appEvent) {
-        System.out.println("INIT event received by ContentView");
+
     }
 }
