@@ -1,0 +1,24 @@
+.custom-wrapper {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.custom-panel-load-file {
+    top: 10px;
+    position: relative;
+    height: 18%;
+    width: 98%;
+}
+
+.custom-panel-load-prevalidation-result {
+    position: relative;
+    height: 18%;
+    width: 98%;
+}
+
+.custom-panel-data-validation-result {
+    position: relative;
+    height: 57%;
+    width: 98%;
+}

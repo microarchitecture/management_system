@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface NavigationTreeDao {
 
-    List<NavigationTreeNode> getNavigationTreeNodes();
+    List<NavigationTreeNode> getNavigationTreeNodes(NavigationTreeNode.NodeType nodeType);
 
 }

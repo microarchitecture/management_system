@@ -1,0 +1,44 @@
+.custom-navbar {
+    background-color: #C8F4FA;
+}
+
+.sidebar {
+    position: fixed;
+    top: 51px;
+    /*bottom: 0;*/
+    /*left: 0;*/
+    height: 100%;
+    z-index: 1000;
+    /*disply: block;*/
+    overflow-x: hidden;
+    overflow-y: auto;
+    border-right: 1px solid #eee;
+    background-color: #F7F9FA;
+}
+
+.main-panel {
+    position: fixed;
+    top: 51px;
+    left: 100px;
+}
+
+.row-bottom-margin {
+    margin-bottom: 0px !important;
+}
+
+.nav-header {
+    display: block;
+    padding: 3px 15px;
+    /*font-size: 11px;*/
+    font-weight: bold;
+    line-height: 20px;
+    color: #999;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+    text-transform: uppercase;
+}
+.nav-list {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-bottom: 0;
+}
+

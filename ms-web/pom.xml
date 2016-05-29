@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <parent>
         <artifactId>ms-main</artifactId>
@@ -8,45 +9,10 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
 
     <name>ms-web</name>
     <artifactId>ms-web</artifactId>
-
-    <properties>
-        <gwtModule>explorer.gwt.Explorer</gwtModule>
-        <gwtHostPage>index.jsp</gwtHostPage>
-    </properties>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>gwt-maven-plugin</artifactId>
-                <version>${gwt.version}</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>compile</goal>
-                            <goal>mergewebxml</goal>
-                            <goal>resources</goal>
-                        </goals>
-                    </execution>
-                </executions>
-
-                <configuration>
-                    <!--<gwtVersion>${gwt.version}</gwtVersion>-->
-                    <hostedWebapp>target/limits-web-${version}</hostedWebapp>
-                    <!--<runTarget>${gwtModule}/${gwtHostPage}</runTarget>-->
-                    <module>${gwtModule}</module>
-                    <!--<logLevel>INFO</logLevel>-->
-                    <!--<style>DETAILED</style>-->
-
-                    <extraJvmArgs>-Xmx1024m -Xms512m -XX:MaxPermSize=512m</extraJvmArgs>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 
     <dependencies>
         <dependency>
@@ -97,16 +63,20 @@
             <artifactId>spring-web</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.google.gwt</groupId>
-            <artifactId>gwt-user</artifactId>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.google.gwt</groupId>
-            <artifactId>gwt-servlet</artifactId>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.extjs</groupId>
-            <artifactId>gxt</artifactId>
+            <groupId>commons-fileupload</groupId>
+            <artifactId>commons-fileupload</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
         </dependency>
     </dependencies>
 

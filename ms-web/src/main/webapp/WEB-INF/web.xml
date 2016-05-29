@@ -4,6 +4,10 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
 
+    <welcome-file-list>
+        <welcome-file>resources/index.html</welcome-file>
+    </welcome-file-list>
+
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
@@ -11,40 +15,24 @@
         <param-name>contextConfigLocation</param-name>
         <param-value>
             classpath:application-datasource-context.xml
-            classpath:application-transaction-context.xml
-            classpath:application-web-context.xml
             classpath:application-dao-module-context.xml
             classpath:application-service-module-context.xml
-            classpath:application-gwt-web-module-context.xml
         </param-value>
     </context-param>
-    <!--<servlet>-->
-        <!--<servlet-name>dispatcher</servlet-name>-->
-        <!--<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>-->
-        <!--<init-param>-->
-            <!--<param-name>contextConfigLocation</param-name>-->
-            <!--<param-value>classpath:application-main-context.xml</param-value>-->
-        <!--</init-param>-->
-    <!--</servlet>-->
-    <!--<servlet-mapping>-->
-        <!--<servlet-name>dispatcher</servlet-name>-->
-        <!--<url-pattern>/web/*</url-pattern>-->
-    <!--</servlet-mapping>-->
-    <!--<servlet>-->
-        <!--<servlet-name>rpcDispatcherServlet</servlet-name>-->
-        <!--<servlet-class>explorer.gwt.controller.RPCDispatcherServlet</servlet-class>-->
-    <!--</servlet>-->
-    <!--<servlet-mapping>-->
-        <!--<servlet-name>rpcDispatcherServlet</servlet-name>-->
-        <!--<url-pattern>explorer.gwt.client.Explorer/*</url-pattern>-->
-    <!--</servlet-mapping>-->
+    
     <servlet>
-        <servlet-name>gwtNavigationTreeService</servlet-name>
-        <servlet-class>explorer.gwt.server.GwtNavigationTreeServiceImpl</servlet-class>
+        <servlet-name>dispatcher</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath:application-web-context.xml</param-value>
+        </init-param>
+        <!--<load-on-startup>1</load-on-startup>-->
     </servlet>
     <servlet-mapping>
-        <servlet-name>gwtNavigationTreeService</servlet-name>
-        <url-pattern>explorer.gwt.Explorer/gwtNavigationTreeService</url-pattern>
+        <servlet-name>dispatcher</servlet-name>
+        <url-pattern>/</url-pattern>
     </servlet-mapping>
+    
 </web-app>
         

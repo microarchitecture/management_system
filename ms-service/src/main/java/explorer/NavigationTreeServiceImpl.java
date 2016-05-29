@@ -9,16 +9,13 @@ import java.util.List;
 @Service("navigationTreeServiceImpl")
 public class NavigationTreeServiceImpl implements NavigationTreeService<NavigationTreeNode> {
 
-    public NavigationTreeServiceImpl() {
-        int x = 1;
-    }
-
     @Resource
     private NavigationTreeDao navigationTreeDaoImpl;
 
-    @Transactional
-    public List<NavigationTreeNode> getNavigationTreeNodes() {
-        List<NavigationTreeNode> resultList = navigationTreeDaoImpl.getNavigationTreeNodes();
+    @Transactional(readOnly = true)
+    public List<NavigationTreeNode> getNavigationTreeNodes(NavigationTreeNode.NodeType nodeType) {
+        List<NavigationTreeNode> resultList = navigationTreeDaoImpl.getNavigationTreeNodes(nodeType);
         return resultList;
     }
+
 }

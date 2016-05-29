@@ -1,5 +1,6 @@
 package explorer;
 
+import com.google.gson.annotations.Expose;
 import parentEntity.ParentId;
 
 import javax.persistence.*;
@@ -22,6 +23,9 @@ public class NavigationTreeNode extends ParentId {
 
     @OneToMany(mappedBy = "parent", fetch = FetchType.EAGER)
     private List<NavigationTreeNode> children;
+
+    @Column(name = "URL_ADDRESS")
+    private String urlAddress;
 
     public String getNodeName() {
         return nodeName;
@@ -53,6 +57,14 @@ public class NavigationTreeNode extends ParentId {
 
     public List<NavigationTreeNode> getChildren() {
         return children;
+    }
+
+    public String getUrlAddress() {
+        return urlAddress;
+    }
+
+    public void setUrlAddress(String urlAddress) {
+        this.urlAddress = urlAddress;
     }
 
     public enum NodeType {

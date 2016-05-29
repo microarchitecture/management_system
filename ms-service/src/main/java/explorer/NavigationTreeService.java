@@ -4,6 +4,6 @@ import java.util.List;
 
 public interface NavigationTreeService<T> {
 
-    List<T> getNavigationTreeNodes();
+    List<T> getNavigationTreeNodes(NavigationTreeNode.NodeType nodeType);
 
 }

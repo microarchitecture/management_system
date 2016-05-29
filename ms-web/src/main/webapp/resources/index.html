@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="indexPageModule">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Navigation Panel</title>
+    <link href="/resources/css/bootstrap.css" rel="stylesheet"/>
+    <link href="/resources/css/bootstrap-theme.css" rel="stylesheet"/>
+    <link href="/resources/css/index-style.css" rel="stylesheet"/>
+    <script src="/resources/js/angular.js"></script>
+    <script src="/resources/js/angular-route.js"></script>
+    <script src="/resources/js/limits_list_module.js"></script>
+    <script src="/resources/js/limits_upload_module.js"></script>
+    <script src="/resources/js/index_page_module.js"></script>
+
+    <!--<link href="css/bootstrap.css" rel="stylesheet"/>-->
+    <!--<link href="css/bootstrap-theme.css" rel="stylesheet"/>-->
+    <!--<link href="css/index-style.css" rel="stylesheet"/>-->
+    <!--<script src="js/angular.js"></script>-->
+    <!--<script src="js/angular-route.js"></script>-->
+    <base href="/">
+</head>
+<body ng-controller="indexPageRootController">
+<div class="container-fluid">
+    <div id="static-header" class="row">
+        <nav role="navigation" class="navbar navbar-static-top custom-navbar row-bottom-margin">
+        </nav>
+    </div>
+    <div class="row">
+        <div id="navigation-panel" class="col-lg-2 sidebar">
+            <ul class="nav nav-list" ng-repeat="item in treeNavigationMenu">
+                <li><label class="tree-toggler nav-header">{{item.parent}}</label>
+                    <ul class="nav nav-list tree" ng-repeat="child in item.children">
+                        <!--<li><a href ng-click="requestMainPanelData({{child.urlPattern}})">{{child.childName}}</a></li>-->
+                        <li><a href="{{child.urlPattern}}" ng-click="requestMainPanelData(child.urlPattern)">{{child.childName}}</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div id="main-panel" class="col-lg-10 main-panel" ng-view>
+            <!--<div class="col-lg-10 col-lg-offset-2 client.main-panel">-->
+            <!--<div class="container-fluid">-->
+            <!--<div class="row">-->
+            <!--<ul class="nav nav-tabs">-->
+            <!--<li role="presentation" class="active"><a href="#">VaR</a></li>-->
+            <!--<li role="presentation" class="active"><a href="#">Stressed VaR</a></li>-->
+            <!--<li role="presentation" class="active"><a href="#">Model Sensitivities</a></li>-->
+            <!--<li role="presentation" class="active"><a href="#">PST</a></li>-->
+            <!--<li role="presentation" class="active"><a href="#">RST</a></li>-->
+            <!--<li role="presentation" class="active"><a href="#">CVA Issuer</a></li>-->
+            <!--<li role="presentation" class="active"><a href="#">CVA Overhedging</a></li>-->
+            <!--</ul>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -4,7 +4,6 @@ import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.SQLQuery;
 import org.hibernate.Session;
-import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -37,9 +36,7 @@ public abstract class AbstractDao<T> {
     }
 
     protected Session getSession() {
-        if (session == null) {
-            session = entityManager.unwrap(Session.class);
-        }
+        session = (Session) entityManager.getDelegate();
         return session;
     }
 
