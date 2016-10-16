@@ -20,6 +20,7 @@ import static org.junit.Assert.assertThat;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:/application-dao-module-context.xml", "classpath:/application-datasource-context.xml"})
+@Ignore
 public class NavigationTreeDaoImplTest {
 
     @Resource
