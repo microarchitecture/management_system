@@ -9,5 +9,6 @@
 
        <context:component-scan base-package="explorer"/>
        <context:component-scan base-package="abs"/>
+       <context:component-scan base-package="value.set"/>
 
 </beans>

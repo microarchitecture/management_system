@@ -1,6 +1,5 @@
 package explorer;
 
-import com.google.gson.annotations.Expose;
 import parentEntity.ParentId;
 
 import javax.persistence.*;
