@@ -11,7 +11,7 @@ import javax.persistence.*;
 @Table(name = "VALUE_SET_VALUE_COLUMN")
 public class ValueSetValueColumn extends ParentId {
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "VALUE_SET_ID")
     private ValueSet valueSetId;
 

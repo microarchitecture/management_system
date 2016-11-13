@@ -7,4 +7,8 @@ public abstract class AbstractCrudDao<T> extends AbstractDao {
         return entity;
     }
 
+    public void save(T entity) {
+        getEntityManager().persist(entity);
+    }
+
 }

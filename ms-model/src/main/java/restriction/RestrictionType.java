@@ -19,18 +19,18 @@ public class RestrictionType extends ParentId {
     @Column(name = "RESTRICTION_TYPE_NAME")
     private String restrictionTypeName;
 
-    @OneToMany(mappedBy = "referenceTypeId")
-    private List<RestrictionRef> restrictionRef;
+    @OneToMany(mappedBy = "restrictionTypeId")
+    private List<RestrictionRef> restrictions;
 
-    @OneToMany(mappedBy = "restrictionTypeId    ")
+    @OneToMany(mappedBy = "restrictionTypeId")
     private List<AttributeDesc> attributeDescs;
 
     public String getRestrictionTypeName() {
         return restrictionTypeName;
     }
 
-    public List<RestrictionRef> getRestrictionRef() {
-        return restrictionRef;
+    public List<RestrictionRef> getRestrictions() {
+        return restrictions;
     }
 
     public List<AttributeDesc> getAttributeDescs() {

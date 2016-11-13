@@ -5,6 +5,8 @@ import org.hibernate.Criteria;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 /**
  * Created by Alex on 30.10.2016.
  */
@@ -17,12 +19,16 @@ public class ValueSetDaoImpl extends AbstractCrudDao<ValueSet> implements ValueS
     }
 
     @Override
+    public List<ValueSet> getAllValueSets() {
+        Criteria criteria = getCriteria();
+        return criteria.list();
+    }
+
+    @Override
     public ValueSet getValueSetById(Long id) {
         Criteria criteria = getCriteria();
         criteria.add(Restrictions.eq("id", id));
         return (ValueSet) criteria.uniqueResult();
-
-//        return get(id);
     }
 
     @Override
@@ -31,4 +37,5 @@ public class ValueSetDaoImpl extends AbstractCrudDao<ValueSet> implements ValueS
         criteria.add(Restrictions.eq("valueSetName", valueSetName));
         return (ValueSet) criteria.uniqueResult();
     }
+
 }
