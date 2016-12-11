@@ -6,6 +6,7 @@ import parentEntity.ParentId;
 
 import javax.persistence.*;
 import java.lang.reflect.Field;
+import java.math.BigDecimal;
 
 /**
  * Created by Alex on 16.10.2016.
@@ -13,10 +14,6 @@ import java.lang.reflect.Field;
 @Entity
 @Table(name = "RESTRICTION")
 public class Restriction extends ParentId {
-
-    @OneToOne
-    @JoinColumn(name = "RESTRICTION_REF_ID")
-    private RestrictionRef restrictionRefId;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "RESTRICTION_TYPE_ID")
@@ -34,8 +31,8 @@ public class Restriction extends ParentId {
     @Type(type="org.jadira.usertype.dateandtime.joda.PersistentLocalDateTime")
     private LocalDateTime dateTo;
 
-    @Column(name = "RESTRICTION_VALUE")
-    private Long restrictionValue;
+    @Column(name = "RESTRICTION_VALUE", precision = 10, scale = 2)
+    private BigDecimal restrictionValue;
 
     @Column(name = "ATTRIBUTE1")
     private String attribute1;
@@ -110,9 +107,9 @@ public class Restriction extends ParentId {
         return null;
     }
 
-    public RestrictionRef getRestrictionRefId() {
-        return restrictionRefId;
-    }
+//    public RestrictionRef getRestrictionRefId() {
+//        return restrictionRefId;
+//    }
 
     public RestrictionType getRestrictionType() {
         return restrictionType;
@@ -130,7 +127,7 @@ public class Restriction extends ParentId {
         return dateTo;
     }
 
-    public Long getRestrictionValue() {
+    public BigDecimal getRestrictionValue() {
         return restrictionValue;
     }
 
@@ -214,9 +211,9 @@ public class Restriction extends ParentId {
         return attribute20;
     }
 
-    public void setRestrictionRefId(RestrictionRef restrictionRefId) {
-        this.restrictionRefId = restrictionRefId;
-    }
+//    public void setRestrictionRefId(RestrictionRef restrictionRefId) {
+//        this.restrictionRefId = restrictionRefId;
+//    }
 
     public void setRestrictionType(RestrictionType restrictionType) {
         this.restrictionType = restrictionType;
@@ -234,7 +231,7 @@ public class Restriction extends ParentId {
         this.dateTo = dateTo;
     }
 
-    public void setRestrictionValue(Long restrictionValue) {
+    public void setRestrictionValue(BigDecimal restrictionValue) {
         this.restrictionValue = restrictionValue;
     }
 

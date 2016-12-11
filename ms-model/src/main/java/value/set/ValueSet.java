@@ -5,6 +5,7 @@ import parentEntity.ParentId;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "VALUE_SET")
@@ -16,24 +17,11 @@ public class ValueSet extends ParentId {
     @OneToMany(mappedBy = "valueSetId")
     private List<ValueSetValue> valueSetValues;
 
-    @OneToMany(mappedBy = "valueSetId", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "valueSetId")
     private List<ValueSetValueColumn> valueSetValueColumns;
 
-//    @OneToMany(mappedBy = "valueSetId", fetch = FetchType.LAZY)
+//    @OneToMany(mappedBy = "valueSetId")
 //    private List<AttributeDesc> attributeDescs;
-
-
-    public void setValueSetName(String valueSetName) {
-        this.valueSetName = valueSetName;
-    }
-
-    public void setValueSetValues(List<ValueSetValue> valueSetValues) {
-        this.valueSetValues = valueSetValues;
-    }
-
-    public void setValueSetValueColumns(List<ValueSetValueColumn> valueSetValueColumns) {
-        this.valueSetValueColumns = valueSetValueColumns;
-    }
 
     public String getValueSetName() {
         return valueSetName;
@@ -46,4 +34,8 @@ public class ValueSet extends ParentId {
     public List<ValueSetValueColumn> getValueSetValueColumns() {
         return valueSetValueColumns;
     }
+
+//    public List<AttributeDesc> getAttributeDescs() {
+//        return attributeDescs;
+//    }
 }
