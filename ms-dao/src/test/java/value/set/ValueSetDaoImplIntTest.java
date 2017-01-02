@@ -7,8 +7,6 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
-
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
@@ -23,16 +21,11 @@ public class ValueSetDaoImplIntTest {
     private ValueSetDao valueSetDao;
 
     @Test
-    public void testGetAllValueSets() {
-        List<ValueSet> result = valueSetDao.getAllValueSets();
-        assertThat(result).isNotNull();
-    }
-
-    @Test
     public void testGetValueSetByIdReturnsCorrectResult() {
         ValueSet result = valueSetDao.getValueSetById(10l);
         assertThat(result).isNotNull();
         assertThat(result.getValueSetValues()).isNotEmpty();
+        assertThat(result.getValueSetName()).isEqualTo("RISK_CLASS_VALUES");
     }
 
     @Test
@@ -40,6 +33,7 @@ public class ValueSetDaoImplIntTest {
         ValueSet result = valueSetDao.getValueSetByName("RISK_CLASS_VALUES");
         assertThat(result).isNotNull();
         assertThat(result.getValueSetValues()).isNotEmpty();
+        assertThat(result.getValueSetName()).isEqualTo("RISK_CLASS_VALUES");
     }
 
 }
