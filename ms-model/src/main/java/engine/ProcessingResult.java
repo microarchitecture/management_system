@@ -1,22 +1,24 @@
-package processor;
+package engine;
 
-import processor.parsing.ParsedRecord;
-import processor.validation.result.ValidationResult;
+import dto.data.RawData;
+import engine.parsing.ParsedRecord;
+import engine.validation.result.ValidationResult;
 
 import java.util.List;
 
 /**
  * Created by Alex on 11.12.2016.
  */
-public class ProcessingResult<T> {
+public class ProcessingResult {
 
     private boolean headerValid;
     private boolean dataValid;
-    private T rawData;
+    private RawData rawData;
     private List<ValidationResult> validationResults;
+    private List<String> parsedHeader;
     private List<ParsedRecord> parsedRecords;
 
-    public ProcessingResult(T rawData) {
+    public ProcessingResult(RawData rawData) {
         this.rawData = rawData;
     }
 
@@ -36,6 +38,14 @@ public class ProcessingResult<T> {
         this.dataValid = dataValid;
     }
 
+    public RawData getRawData() {
+        return rawData;
+    }
+
+    public void setRawData(RawData rawData) {
+        this.rawData = rawData;
+    }
+
     public List<ValidationResult> getValidationResults() {
         return validationResults;
     }
@@ -44,15 +54,19 @@ public class ProcessingResult<T> {
         this.validationResults = validationResults;
     }
 
+    public List<String> getParsedHeader() {
+        return parsedHeader;
+    }
+
+    public void setParsedHeader(List<String> parsedHeader) {
+        this.parsedHeader = parsedHeader;
+    }
+
     public List<ParsedRecord> getParsedRecords() {
         return parsedRecords;
     }
 
     public void setParsedRecords(List<ParsedRecord> parsedRecords) {
         this.parsedRecords = parsedRecords;
-    }
-
-    public T getRawData() {
-        return rawData;
     }
 }

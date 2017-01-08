@@ -1,6 +1,6 @@
-package processor.validation.result;
+package engine.validation.result;
 
-import processor.validation.error.ValidationError;
+import engine.validation.error.ValidationError;
 
 import java.util.ArrayList;
 import java.util.Collections;
