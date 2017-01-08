@@ -1,16 +1,15 @@
 package engine.parsing;
 
-import processor.ProcessingResult;
-import processor.parsing.ParsedRecord;
+import engine.ProcessingResult;
 
 /**
  * Created by Alex on 11.12.2016.
  */
-public class HeaderParsingEngine extends ParsingEngine {
+public class HeaderParsingEngine extends ParsingEngine<ParsedRecord> {
 
     @Override
-    ParsedRecord parse(ProcessingResult processingResult) {
-        return null;
+    protected ParsedRecord parse(ProcessingResult processingResult) {
+        return rawDataConverter.convert(processingResult.getRawData());
     }
 
     @Override

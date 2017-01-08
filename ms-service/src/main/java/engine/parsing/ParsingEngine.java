@@ -1,22 +1,21 @@
 package engine.parsing;
 
+import data.converter.RawDataConverter;
 import engine.ProcessingEngine;
-import processor.ProcessingResult;
-import processor.parsing.ParsedRecord;
-
-import java.util.ArrayList;
-import java.util.List;
+import engine.ProcessingResult;
+import org.springframework.beans.factory.annotation.Required;
 
 /**
  * Created by Alex on 11.12.2016.
  */
-public abstract class ParsingEngine implements ProcessingEngine {
+public abstract class ParsingEngine<T> implements ProcessingEngine {
 
-    public List<ParsedRecord> parsedRecords;
+    protected RawDataConverter<T> rawDataConverter;
 
-    public void setParsedRecords(List<ParsedRecord> parsedRecords) {
-        this.parsedRecords = new ArrayList<>(parsedRecords);
+    protected abstract T parse(ProcessingResult processingResult);
+
+    @Required
+    public void setRawDataConverter(RawDataConverter<T> rawDataConverter) {
+        this.rawDataConverter = rawDataConverter;
     }
-
-    abstract ParsedRecord parse(ProcessingResult processingResult);
 }

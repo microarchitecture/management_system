@@ -1,7 +1,7 @@
 package engine.validation;
 
 import engine.ProcessingEngine;
-import processor.ProcessingResult;
+import engine.ProcessingResult;
 import validator.Validator;
 
 import java.util.ArrayList;

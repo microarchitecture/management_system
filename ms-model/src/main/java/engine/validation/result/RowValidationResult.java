@@ -1,6 +1,6 @@
-package processor.validation.result;
+package engine.validation.result;
 
-import processor.validation.error.CellValidationError;
+import engine.validation.error.CellValidationError;
 
 import java.util.List;
 

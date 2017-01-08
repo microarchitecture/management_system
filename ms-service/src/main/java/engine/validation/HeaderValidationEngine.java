@@ -1,6 +1,6 @@
 package engine.validation;
 
-import processor.ProcessingResult;
+import engine.ProcessingResult;
 
 /**
  * Created by Alex on 11.12.2016.
