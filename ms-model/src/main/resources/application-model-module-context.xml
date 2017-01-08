@@ -6,5 +6,6 @@
        http://www.springframework.org/schema/beans/spring-beans.xsd">
 
        <context:component-scan base-package="explorer"/>
+       <context:component-scan base-package="value.set"/>
 
 </beans>

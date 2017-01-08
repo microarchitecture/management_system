@@ -6,14 +6,15 @@ import javax.persistence.*;
 public class ParentId {
 
     @Id
-//    @SequenceGenerator(name = "", sequenceName = "")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_GEN")
+    @SequenceGenerator(name = "SEQ_GEN", sequenceName = "HIB_SEQ")
     @Column(name = "ID")
     private long id;
 
     public void setId(long id) {
         this.id = id;
     }
+
     public long getId() {
         return id;
     }

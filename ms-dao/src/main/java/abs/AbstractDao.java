@@ -35,7 +35,7 @@ public abstract class AbstractDao<T> {
         return entityManager;
     }
 
-    protected Session getSession() {
+    public Session getSession() {
         session = (Session) entityManager.getDelegate();
         return session;
     }

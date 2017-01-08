@@ -10,9 +10,9 @@
        <import resource="classpath:application-dao-module-context.xml"/>
 
        <bean id="dataSource" class="oracle.jdbc.pool.OracleDataSource">
-              <property name="URL" value="jdbc:oracle:thin:DEV1@//localhost:1521/xe"/>
-              <property name="user" value="DEV1"/>
-              <property name="password" value="DEV1"/>
+              <property name="URL" value="jdbc:oracle:thin:dev_user@//localhost:1521/xe"/>
+              <property name="user" value="dev_user"/>
+              <property name="password" value="dev_user"/>
        </bean>
 
        <bean id="entityMangerFactory"
