@@ -6,14 +6,15 @@ import java.util.Map;
 /**
  * Created by Alex on 11.12.2016.
  */
+//TODO Check if there is a sense to implement generic HeaderParsedRecord and BodyParsedRecord
 public final class ParsedRecord {
     private int rowNumber;
-    private Map<String, String> records;
+    private Map<String, Object> records;
 
     private ParsedRecord() {
     }
 
-    public Map<String, String> getRecords() {
+    public Map<String, Object> getRecords() {
         return Collections.unmodifiableMap(records);
     }
 
@@ -37,7 +38,7 @@ public final class ParsedRecord {
             return this;
         }
 
-        public Builder setRecords(Map<String, String> records) {
+        public Builder setRecords(Map<String, Object> records) {
             this.instance.records = records;
             return this;
         }
