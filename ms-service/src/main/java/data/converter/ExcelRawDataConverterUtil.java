@@ -19,7 +19,7 @@ import java.util.stream.StreamSupport;
 /**
  * Created by Alex on 08.01.2017.
  */
-public final class ExcelRawDataConverterUtil implements RawDataConverterUtil<ParsedRecord, MultipartRawData> {
+public final class ExcelRawDataConverterUtil implements RawDataConverterUtil<MultipartRawData, ParsedRecord> {
 
     private ExcelRawDataConverterUtil() {
     }

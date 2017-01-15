@@ -5,6 +5,8 @@ package engine;
  */
 public interface ProcessingEngine {
 
+    void setNextProcessingEngine(ProcessingEngine processingEngine);
+
     ProcessingResult process(ProcessingResult processingResult);
 
 }

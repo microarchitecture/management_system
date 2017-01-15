@@ -11,7 +11,13 @@ import static com.google.common.base.Preconditions.checkNotNull;
  */
 public class HeaderRawDataConverter implements RawDataConverter<ParsedRecord> {
 
-    private RawDataConverterUtil<ParsedRecord, RawData> converterUtil;
+    private RawDataConverterUtil<RawData, ParsedRecord> converterUtil;
+
+    @Required
+    @Override
+    public void setConverterUtil(RawDataConverterUtil<RawData, ParsedRecord> converterUtil) {
+        this.converterUtil = converterUtil;
+    }
 
     @Override
     public ParsedRecord convert(RawData rawData) {
@@ -22,10 +28,5 @@ public class HeaderRawDataConverter implements RawDataConverter<ParsedRecord> {
     private void checkDataNotNull(RawData rawData) {
         checkNotNull(rawData);
         checkNotNull(rawData.getRawData());
-    }
-
-    @Required
-    public void setConverterUtil(RawDataConverterUtil<ParsedRecord, RawData> converterUtil) {
-        this.converterUtil = converterUtil;
     }
 }

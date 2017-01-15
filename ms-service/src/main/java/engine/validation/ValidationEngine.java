@@ -12,10 +12,16 @@ import java.util.List;
  */
 public abstract class ValidationEngine implements ProcessingEngine {
 
+    private ProcessingEngine nextProcessingEngine;
     private List<Validator> validators;
 
+    @Override
+    public void setNextProcessingEngine(ProcessingEngine processingEngine) {
+        nextProcessingEngine = processingEngine;
+    }
+
     public void setValidators(List<Validator> validators) {
-        validators = new ArrayList<>(validators);
+        this.validators = new ArrayList<>(validators);
     }
 
     abstract ProcessingResult validate(ProcessingResult precessingResult);

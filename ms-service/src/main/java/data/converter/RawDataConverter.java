@@ -7,6 +7,8 @@ import dto.data.RawData;
  */
 public interface RawDataConverter<T> {
 
+    void setConverterUtil(RawDataConverterUtil<RawData, T> converterUtil);
+
     T convert(RawData rawData);
 
 }

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="headerParsingEngine" class="engine.parsing.HeaderParsingEngine">
+        <property name="rawDataConverter" ref="headerRawDataConverter"/>
+        <property name="nextProcessingEngine" ref="headerValidationEngine"/>
+    </bean>
+
+    <bean id="headerRawDataConverter" class="org.mockito.Mockito" factory-method="mock">
+        <constructor-arg value="data.converter.HeaderRawDataConverter"/>
+    </bean>
+
+    <bean id="headerValidationEngine" class="engine.validation.HeaderValidationEngine">
+        <property name="nextProcessingEngine" ref="dataParsingEngine"/>
+    </bean>
+
+
+    <bean id="dataParsingEngine" class="engine.parsing.DataParsingEngine">
+        <property name="rawDataConverter" ref="bodyRawDataConverter"/>
+        <property name="nextProcessingEngine" ref="dataValidationEngine"/>
+    </bean>
+
+    <bean id="bodyRawDataConverter" class="org.mockito.Mockito" factory-method="mock">
+        <constructor-arg value="data.converter.BodyRawDataConverter"/>
+    </bean>
+
+    <bean id="dataValidationEngine" class="org.mockito.Mockito" factory-method="mock">
+        <constructor-arg value="engine.validation.DataValidationEngine"/>
+    </bean>
+
+</beans>

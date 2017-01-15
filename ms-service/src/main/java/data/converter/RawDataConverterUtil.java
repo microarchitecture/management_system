@@ -7,7 +7,7 @@ import java.util.Collection;
 /**
  * Created by Alex on 08.01.2017.
  */
-public interface RawDataConverterUtil<T, S extends RawData> {
+public interface RawDataConverterUtil<S extends RawData, T> {
 
     T convertHeaderRawData(S rawdata);
 

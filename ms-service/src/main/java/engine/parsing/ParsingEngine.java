@@ -10,12 +10,18 @@ import org.springframework.beans.factory.annotation.Required;
  */
 public abstract class ParsingEngine<T> implements ProcessingEngine {
 
+    protected ProcessingEngine nextProcessingEngine;
     protected RawDataConverter<T> rawDataConverter;
 
-    protected abstract T parse(ProcessingResult processingResult);
+    @Override
+    public void setNextProcessingEngine(ProcessingEngine processingEngine) {
+        nextProcessingEngine = processingEngine;
+    }
 
     @Required
     public void setRawDataConverter(RawDataConverter<T> rawDataConverter) {
         this.rawDataConverter = rawDataConverter;
     }
+
+    protected abstract T parse(ProcessingResult processingResult);
 }
