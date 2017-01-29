@@ -9,7 +9,7 @@
     </bean>
 
     <bean id="headerRawDataConverter" class="org.mockito.Mockito" factory-method="mock">
-        <constructor-arg value="data.converter.HeaderRawDataConverter"/>
+        <constructor-arg value="converter.data.HeaderRawDataConverter"/>
     </bean>
 
     <bean id="headerValidationEngine" class="engine.validation.HeaderValidationEngine">
@@ -23,7 +23,7 @@
     </bean>
 
     <bean id="bodyRawDataConverter" class="org.mockito.Mockito" factory-method="mock">
-        <constructor-arg value="data.converter.BodyRawDataConverter"/>
+        <constructor-arg value="converter.data.BodyRawDataConverter"/>
     </bean>
 
     <bean id="dataValidationEngine" class="org.mockito.Mockito" factory-method="mock">

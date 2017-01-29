@@ -9,12 +9,12 @@ import java.util.List;
 /**
  * Created by Alex on 11.12.2016.
  */
-public class ProcessingResult {
+public class ProcessingResult<T extends ValidationResult> {
 
     private boolean headerValid;
     private boolean dataValid;
     private RawData rawData;
-    private List<ValidationResult> validationResults;
+    private List<T> validationResults;
     private List<String> parsedHeader;
     private List<ParsedRecord> parsedRecords;
 
@@ -46,11 +46,11 @@ public class ProcessingResult {
         this.rawData = rawData;
     }
 
-    public List<ValidationResult> getValidationResults() {
+    public List<T> getValidationResults() {
         return validationResults;
     }
 
-    public void setValidationResults(List<ValidationResult> validationResults) {
+    public void setValidationResults(List<T> validationResults) {
         this.validationResults = validationResults;
     }
 

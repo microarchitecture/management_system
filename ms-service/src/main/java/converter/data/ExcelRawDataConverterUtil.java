@@ -1,4 +1,4 @@
-package data.converter;
+package converter.data;
 
 import dto.data.MultipartRawData;
 import engine.parsing.ParsedRecord;

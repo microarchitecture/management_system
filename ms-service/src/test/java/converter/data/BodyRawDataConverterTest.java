@@ -1,8 +1,7 @@
-package data.converter;
+package converter.data;
 
 import dto.data.MultipartRawData;
 import dto.data.RawData;
-import engine.parsing.ParsedRecord;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -14,9 +13,7 @@ import java.io.IOException;
 import java.util.List;
 
 import static org.mockito.Matchers.any;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.when;
-import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.*;
 
 
 /**

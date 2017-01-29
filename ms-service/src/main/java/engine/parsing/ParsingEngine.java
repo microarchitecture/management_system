@@ -1,6 +1,6 @@
 package engine.parsing;
 
-import data.converter.RawDataConverter;
+import converter.data.RawDataConverter;
 import engine.ProcessingEngine;
 import engine.ProcessingResult;
 import org.springframework.beans.factory.annotation.Required;

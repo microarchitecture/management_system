@@ -1,4 +1,4 @@
-package data.converter;
+package converter.data;
 
 import com.google.common.collect.Lists;
 import dto.data.MultipartRawData;

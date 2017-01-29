@@ -9,10 +9,11 @@ import java.util.List;
  */
 public final class RowValidationResult extends ValidationResult<CellValidationError> {
 
-    private int rowNumber;
+    private final int rowNumber;
 
-    public RowValidationResult(List<CellValidationError> validationErrors) {
+    public RowValidationResult(List<CellValidationError> validationErrors, int rowNumber) {
         super(validationErrors);
+        this.rowNumber = rowNumber;
     }
 
     public int getRowNumber() {
